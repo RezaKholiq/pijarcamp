@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nama produk</th>
+            <th scope="col">Keterangan</th>
+            <th scope="col">Harga</th>
+            <th scope="col">Jumlah produk</th>
+            <th width="200px">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (let user of users) { %> 
+            <tr>
+            <th scope="row"> <%= user.nama_produk %></th>
+            <th scope="row"> <%= user.keterangan %></th>
+            <th scope="row"> <%= user.harga %></th>
+            <th scope="row"> <%= user.jumlah %></th>
+            <th scope="row">
+                <a class="btn btn-danger" action="/remove" method="get"
+                    >Delete</a>
+            </th>
+             </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <form action="/tambah" method="post">
+        <h3>Tambahkan Produk</h3>
+        <div class="form-group">
+          <label for="nama produk">Nama produk</label>
+          <input type="text" class="form-control"  name="nama produk">
+        </div>
+        <div class="form-group">
+          <label for="keterangan">Keterangan</label>
+          <input type="text" class="form-control" name="keterangan">
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="harga">Harga</label>
+      <input type="text" class="form-control" name="harga">
+    </div>
+</div>
+<div class="form-group">
+  <label for="jumlah">Jumlah</label>
+  <input type="text" class="form-control" name="jumlah">
+</div> 
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
